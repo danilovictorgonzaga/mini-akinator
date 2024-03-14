@@ -2,16 +2,12 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class Filtro {
-    public static void atualizarResposta(String resposta, boolean respostaBoollean, String caracteristica, List<Personagem> listaPersonagens, boolean continuar) {
+    public static void atualizarResposta(String resposta, boolean respostaBoollean, String caracteristica, List<Personagem> listaPersonagens) {
 
         if (resposta.equalsIgnoreCase("s")) {
             respostaBoollean = true;
-            continuar = true;
         } else if (resposta.equalsIgnoreCase("n")) {
             respostaBoollean = false;
-            continuar = true;
-        } else {
-            System.out.println("Resposta invalida. Digite 'S' ou 'N'.");
         }
 
         filtrarPersonagens(listaPersonagens, caracteristica, respostaBoollean);
